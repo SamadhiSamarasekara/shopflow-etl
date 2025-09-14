@@ -18,3 +18,26 @@ and loads it into a MySQL database for reporting and analytics.
 - VS Code
 
 ## 📂 Project Structure
+shopflow-etl/
+├─ data/ # sample raw data (ignored in git)
+├─ etl_shopflow.py # main ETL script
+├─ requirements.txt # dependencies
+├─ .env # DB connection (ignored in git)
+├─ .gitignore
+└─ README.md
+
+## ⚡ How to Run
+
+1. Clone the repo:
+
+- git clone https://github.com/SamadhiSamarasekara/shopflow-etl.git
+- cd shopflow-etl
+
+2. Create a .env file with your MySQL settings.
+
+3. Install dependencies:
+- pip install -r requirements.txt
+
+4. Run the ETL:
+- python etl_shopflow.py --csv data/orders.csv
+
