@@ -18,6 +18,7 @@ and loads it into a MySQL database for reporting and analytics.
 - VS Code
 
 ## 📂 Project Structure
+
 shopflow-etl/
 ├─ data/                  # sample raw data (ignored in git)
 ├─ etl_shopflow.py        # main ETL script
