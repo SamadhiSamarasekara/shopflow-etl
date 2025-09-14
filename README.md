@@ -19,12 +19,12 @@ and loads it into a MySQL database for reporting and analytics.
 
 ## 📂 Project Structure
 shopflow-etl/
-├─ data/ # sample raw data (ignored in git)
-├─ etl_shopflow.py # main ETL script
-├─ requirements.txt # dependencies
-├─ .env # DB connection (ignored in git)
+├─ data/                  # sample raw data (ignored in git)
+├─ etl_shopflow.py        # main ETL script
+├─ requirements.txt       # dependencies
+├─ .env                   # DB connection (ignored in git)
 ├─ .gitignore
-└─ README.md
+└─ README.md              # project documentation
 
 ## ⚡ How to Run
 
