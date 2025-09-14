@@ -1,0 +1,76 @@
+2025-09-13 23:36:03,745 [INFO] Extracting CSV: data/orders.csv
+2025-09-13 23:36:03,747 [ERROR] ETL failed: [Errno 2] No such file or directory: 'data/orders.csv'
+Traceback (most recent call last):
+  File "C:\Users\SAMADHI\OneDrive\Desktop\shopflow-etl\etl_shopflow.py", line 239, in <module>
+    etl_from_csv(args.csv)
+    ~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\SAMADHI\OneDrive\Desktop\shopflow-etl\etl_shopflow.py", line 197, in etl_from_csv
+    df = extract_csv(file_path)
+  File "C:\Users\SAMADHI\OneDrive\Desktop\shopflow-etl\etl_shopflow.py", line 44, in extract_csv
+    df = pd.read_csv(path)
+  File "C:\Users\SAMADHI\OneDrive\Desktop\shopflow-etl\venv\Lib\site-packages\pandas\io\parsers\readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "C:\Users\SAMADHI\OneDrive\Desktop\shopflow-etl\venv\Lib\site-packages\pandas\io\parsers\readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "C:\Users\SAMADHI\OneDrive\Desktop\shopflow-etl\venv\Lib\site-packages\pandas\io\parsers\readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\SAMADHI\OneDrive\Desktop\shopflow-etl\venv\Lib\site-packages\pandas\io\parsers\readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+                   ~~~~~~~~~~^
+        f,
+        ^^
+    ...<6 lines>...
+        storage_options=self.options.get("storage_options", None),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\SAMADHI\OneDrive\Desktop\shopflow-etl\venv\Lib\site-packages\pandas\io\common.py", line 873, in get_handle
+    handle = open(
+        handle,
+    ...<3 lines>...
+        newline="",
+    )
+FileNotFoundError: [Errno 2] No such file or directory: 'data/orders.csv'
+2025-09-13 23:40:43,653 [INFO] Extracting CSV: data/orders.csv
+2025-09-13 23:40:43,683 [ERROR] ETL failed: "['customer_uuid'] not in index"
+Traceback (most recent call last):
+  File "C:\Users\SAMADHI\OneDrive\Desktop\shopflow-etl\etl_shopflow.py", line 239, in <module>
+    etl_from_csv(args.csv)
+    ~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\SAMADHI\OneDrive\Desktop\shopflow-etl\etl_shopflow.py", line 208, in etl_from_csv
+    customers_df = df[['customer_uuid', 'customer_name', 'customer_email', 'customer_phone', 'order_date']].drop_duplicates(subset=['customer_email'])
+                   ~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SAMADHI\OneDrive\Desktop\shopflow-etl\venv\Lib\site-packages\pandas\core\frame.py", line 4113, in __getitem__
+    indexer = self.columns._get_indexer_strict(key, "columns")[1]
+              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\SAMADHI\OneDrive\Desktop\shopflow-etl\venv\Lib\site-packages\pandas\core\indexes\base.py", line 6212, in _get_indexer_strict
+    self._raise_if_missing(keyarr, indexer, axis_name)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SAMADHI\OneDrive\Desktop\shopflow-etl\venv\Lib\site-packages\pandas\core\indexes\base.py", line 6264, in _raise_if_missing
+    raise KeyError(f"{not_found} not in index")
+KeyError: "['customer_uuid'] not in index"
+2025-09-13 23:41:21,062 [INFO] Extracting CSV: data/orders.csv
+2025-09-13 23:41:21,079 [ERROR] ETL failed: "['customer_uuid'] not in index"
+Traceback (most recent call last):
+  File "C:\Users\SAMADHI\OneDrive\Desktop\shopflow-etl\etl_shopflow.py", line 239, in <module>
+    etl_from_csv(args.csv)
+    ~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\SAMADHI\OneDrive\Desktop\shopflow-etl\etl_shopflow.py", line 208, in etl_from_csv
+    customers_df = df[['customer_uuid', 'customer_name', 'customer_email', 'customer_phone', 'order_date']].drop_duplicates(subset=['customer_email'])
+                   ~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SAMADHI\OneDrive\Desktop\shopflow-etl\venv\Lib\site-packages\pandas\core\frame.py", line 4113, in __getitem__
+    indexer = self.columns._get_indexer_strict(key, "columns")[1]
+              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\SAMADHI\OneDrive\Desktop\shopflow-etl\venv\Lib\site-packages\pandas\core\indexes\base.py", line 6212, in _get_indexer_strict
+    self._raise_if_missing(keyarr, indexer, axis_name)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SAMADHI\OneDrive\Desktop\shopflow-etl\venv\Lib\site-packages\pandas\core\indexes\base.py", line 6264, in _raise_if_missing
+    raise KeyError(f"{not_found} not in index")
+KeyError: "['customer_uuid'] not in index"
+2025-09-13 23:46:07,274 [INFO] Extracting CSV: data/orders.csv
+2025-09-13 23:46:07,346 [INFO] Upserting customers...
+2025-09-13 23:46:07,382 [INFO] Upserting products...
+2025-09-13 23:46:07,407 [INFO] Inserting order ord-0001 with 2 items
+2025-09-13 23:46:07,423 [INFO] Inserting order ord-0002 with 1 items
+2025-09-13 23:46:07,448 [INFO] ETL from CSV completed successfully.
