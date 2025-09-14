@@ -24,7 +24,7 @@ shopflow-etl/
 ├─ requirements.txt       # dependencies
 ├─ .env                   # DB connection (ignored in git)
 ├─ .gitignore
-└─ README.md              # project documentation
+└─ README.md              # project documentation 
 
 ## ⚡ How to Run
 
