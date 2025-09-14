@@ -18,4 +18,3 @@ and loads it into a MySQL database for reporting and analytics.
 - VS Code
 
 ## 📂 Project Structure
-
